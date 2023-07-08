@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost:3306/damMonitoring</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+    <!-- Validate the database schema on startup -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+    <!-- Set the connection pool provider -->
+    <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
+
+    <!-- C3P0 specific settings -->
+    <property name="hibernate.c3p0.min_size">1</property>
+    <property name="hibernate.c3p0.max_size">5</property>
+    <property name="hibernate.c3p0.acquire_increment">1</property>
+    <property name="hibernate.c3p0.idle_test_period">300</property>
+    <property name="hibernate.c3p0.max_statements">50</property>
+    <property name="hibernate.c3p0.timeout">1800</property>
+
+    <!-- Names the annotated entity class -->
+    <mapping class="it.unipi.iot.damonitoring.entities.FlowRate"/>
+    <mapping class="it.unipi.iot.damonitoring.entities.WaterLevel"/>
+    <mapping class="it.unipi.iot.damonitoring.entities.Resource"/>
+
+  </session-factory>
+</hibernate-configuration>

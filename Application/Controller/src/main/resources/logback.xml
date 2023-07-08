@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+
+<configuration>
+    <import class="ch.qos.logback.classic.encoder.PatternLayoutEncoder"/>
+    <import class="ch.qos.logback.core.rolling.RollingFileAppender"/>
+    <import class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy"/>
+
+    <appender name="FILE" class="RollingFileAppender">
+        <encoder class="PatternLayoutEncoder">
+            <pattern>[%d{HH:mm:ss.SSS}][%-10thread][%-5level][%logger{50}] -%kvp- %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/controller-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize>
+            <maxHistory>15</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="org.hibernate" level="info">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <logger name="it.unipi.iot.damonitoring" level="info">
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="org.eclipse.californium" level="off">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+</configuration>

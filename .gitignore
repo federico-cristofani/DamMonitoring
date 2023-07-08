@@ -1,0 +1,6 @@
+**/target/
+**/logs
+Motes/tools
+
+.idea/
+.vscode/
