@@ -1,6 +1,6 @@
-package it.unipi.iot.damonitoring.controller.coap;
+package it.unipi.iot.damonitoring.collector;
 
-import it.unipi.iot.damonitoring.controller.coap.resources.Registry;
+import it.unipi.iot.damonitoring.collector.resources.Registry;
 import org.eclipse.californium.core.CoapServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

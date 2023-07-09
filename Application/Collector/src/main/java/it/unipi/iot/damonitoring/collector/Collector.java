@@ -17,6 +17,9 @@ public class Collector {
             // Eagle initialization
             DataManager.getInstance();
 
+            // Start registration server
+            RegistrationServer.getInstance().start();
+
             // Start MQTT client
             subscriber = new Subscriber();
 
@@ -29,6 +32,9 @@ public class Collector {
     }
 
     public static void shutdown(){
+
+        // Stop registration server
+        RegistrationServer.getInstance().stop();
 
         // Close MQTT connection
         subscriber.disconnect();

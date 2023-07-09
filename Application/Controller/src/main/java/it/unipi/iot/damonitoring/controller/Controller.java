@@ -1,7 +1,6 @@
 package it.unipi.iot.damonitoring.controller;
 
 import it.unipi.iot.damonitoring.DataManager;
-import it.unipi.iot.damonitoring.controller.coap.RegistrationServer;
 import it.unipi.iot.damonitoring.controller.control.AutomaticControlUnit;
 import it.unipi.iot.damonitoring.controller.control.ControlLogic;
 import it.unipi.iot.damonitoring.controller.control.exceptions.ControlException;
@@ -21,7 +20,6 @@ public class Controller {
 
 		// Eagle initialization
 		try {
-			RegistrationServer.getInstance().start();
 			DataManager.getInstance();
 			AutomaticControlUnit.init();
 		} catch (PersistenceException ex) {
@@ -35,9 +33,6 @@ public class Controller {
 	}
 
 	private static void shutdown(){
-
-		// Stop registration server
-		RegistrationServer.getInstance().stop();
 
 		// Stop automatic control unit (if running mode is AUTO)
 		try {

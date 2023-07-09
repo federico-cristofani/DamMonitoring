@@ -1,8 +1,7 @@
-package it.unipi.iot.damonitoring.controller.coap.resources;
+package it.unipi.iot.damonitoring.collector.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.unipi.iot.damonitoring.DataManager;
-import it.unipi.iot.damonitoring.controller.coap.RegistrationServer;
 import it.unipi.iot.damonitoring.entities.Resource;
 import it.unipi.iot.damonitoring.exceptions.PersistenceException;
 import org.eclipse.californium.core.CoapResource;
@@ -15,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class Registry extends CoapResource{
-    private static final Logger logger = LoggerFactory.getLogger(RegistrationServer.class);
+    private static final Logger logger = LoggerFactory.getLogger(Registry.class);
 
     public Registry(String name) {
         super(name);
