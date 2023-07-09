@@ -17,9 +17,9 @@
     </events>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype596933478</identifier>
+      <identifier>mtype449755257</identifier>
       <description>BorderRouter</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/demo/rpl-border-router/border-router.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/rpl-border-router/border-router.c</source>
       <commands>make -j$(CPUS) border-router.cooja TARGET=cooja</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -41,9 +41,9 @@
     </motetype>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype507676641</identifier>
+      <identifier>mtype437594193</identifier>
       <description>GateCtrlOutflow-1</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/gate-controller/gate-controller.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/gate-controller/gate-controller.c</source>
       <commands>make -j$(CPUS) gate-controller.cooja TARGET=cooja FLOW=outflow-1</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -65,9 +65,9 @@
     </motetype>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype574457778</identifier>
+      <identifier>mtype706485952</identifier>
       <description>GateCtrlOutflow-2</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/gate-controller/gate-controller.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/gate-controller/gate-controller.c</source>
       <commands>make -j$(CPUS) gate-controller.cooja TARGET=cooja FLOW=outflow-2</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -89,9 +89,9 @@
     </motetype>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype692241271</identifier>
+      <identifier>mtype177286836</identifier>
       <description>WaterLevelSensor</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/water-level-sensor/water-level-sensor.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/water-level-sensor/water-level-sensor.c</source>
       <commands>make -j$(CPUS) water-level-sensor.cooja TARGET=cooja</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -113,9 +113,9 @@
     </motetype>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype439966830</identifier>
+      <identifier>mtype934211240</identifier>
       <description>FlowSensorOutflow-1</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/flow-sensor/flow-sensor.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/flow-sensor/flow-sensor.c</source>
       <commands>make -j$(CPUS) flow-sensor.cooja TARGET=cooja FLOW=outflow-1</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -137,9 +137,9 @@
     </motetype>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype949350744</identifier>
+      <identifier>mtype119707154</identifier>
       <description>FlowSensorOutflow-2</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/flow-sensor/flow-sensor.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/flow-sensor/flow-sensor.c</source>
       <commands>make -j$(CPUS) flow-sensor.cooja TARGET=cooja FLOW=outflow-2</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -161,9 +161,9 @@
     </motetype>
     <motetype>
       org.contikios.cooja.contikimote.ContikiMoteType
-      <identifier>mtype147745168</identifier>
+      <identifier>mtype693533511</identifier>
       <description>FlowSensorInflow</description>
-      <source>[CONTIKI_DIR]/project/dam-monitoring/flow-sensor/flow-sensor.c</source>
+      <source>[CONTIKI_DIR]/project/dam-monitoring/firmwares/flow-sensor/flow-sensor.c</source>
       <commands>make -j$(CPUS) flow-sensor.cooja TARGET=cooja FLOW=inflow</commands>
       <moteinterface>org.contikios.cooja.interfaces.Position</moteinterface>
       <moteinterface>org.contikios.cooja.interfaces.Battery</moteinterface>
@@ -199,7 +199,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype596933478</motetype_identifier>
+      <motetype_identifier>mtype449755257</motetype_identifier>
     </mote>
     <mote>
       <interface_config>
@@ -217,7 +217,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype507676641</motetype_identifier>
+      <motetype_identifier>mtype437594193</motetype_identifier>
     </mote>
     <mote>
       <interface_config>
@@ -235,7 +235,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype574457778</motetype_identifier>
+      <motetype_identifier>mtype706485952</motetype_identifier>
     </mote>
     <mote>
       <interface_config>
@@ -253,7 +253,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype692241271</motetype_identifier>
+      <motetype_identifier>mtype177286836</motetype_identifier>
     </mote>
     <mote>
       <interface_config>
@@ -271,7 +271,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype439966830</motetype_identifier>
+      <motetype_identifier>mtype934211240</motetype_identifier>
     </mote>
     <mote>
       <interface_config>
@@ -289,7 +289,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype949350744</motetype_identifier>
+      <motetype_identifier>mtype119707154</motetype_identifier>
     </mote>
     <mote>
       <interface_config>
@@ -307,7 +307,7 @@
         <bitrate>250.0</bitrate>
       </interface_config>
       <interface_config>org.contikios.cooja.contikimote.interfaces.ContikiEEPROM</interface_config>
-      <motetype_identifier>mtype147745168</motetype_identifier>
+      <motetype_identifier>mtype693533511</motetype_identifier>
     </mote>
   </simulation>
   <plugin>
@@ -326,10 +326,10 @@
       <skin>org.contikios.cooja.plugins.skins.GridVisualizerSkin</skin>
       <skin>org.contikios.cooja.plugins.skins.TrafficVisualizerSkin</skin>
       <skin>org.contikios.cooja.plugins.skins.UDGMVisualizerSkin</skin>
-      <viewport>1.7244147346781145 0.0 0.0 1.7244147346781145 113.56838251942638 124.29993465855962</viewport>
+      <viewport>2.9797886615237816 0.0 0.0 2.9797886615237816 51.330004993568984 -9.30283291000896</viewport>
     </plugin_config>
     <width>400</width>
-    <z>1</z>
+    <z>2</z>
     <height>400</height>
     <location_x>1</location_x>
     <location_y>1</location_y>
@@ -342,7 +342,7 @@
       <coloring />
     </plugin_config>
     <width>1246</width>
-    <z>5</z>
+    <z>12</z>
     <height>240</height>
     <location_x>400</location_x>
     <location_y>160</location_y>
@@ -363,7 +363,7 @@
       <zoomfactor>500.0</zoomfactor>
     </plugin_config>
     <width>1646</width>
-    <z>2</z>
+    <z>3</z>
     <height>166</height>
     <location_x>0</location_x>
     <location_y>827</location_y>
@@ -375,7 +375,7 @@
       <decorations>true</decorations>
     </plugin_config>
     <width>966</width>
-    <z>4</z>
+    <z>11</z>
     <height>160</height>
     <location_x>680</location_x>
     <location_y>0</location_y>
@@ -388,10 +388,101 @@
       <bound>true</bound>
     </plugin_config>
     <width>362</width>
-    <z>3</z>
+    <z>10</z>
     <height>116</height>
     <location_x>13</location_x>
     <location_y>412</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>2</mote_arg>
+    <plugin_config>
+      <interface>LEDs</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>349</width>
+    <z>8</z>
+    <height>128</height>
+    <location_x>391</location_x>
+    <location_y>541</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>1</mote_arg>
+    <plugin_config>
+      <interface>LEDs</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>350</width>
+    <z>9</z>
+    <height>122</height>
+    <location_x>390</location_x>
+    <location_y>413</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>6</mote_arg>
+    <plugin_config>
+      <interface>LEDs</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>350</width>
+    <z>5</z>
+    <height>117</height>
+    <location_x>1125</location_x>
+    <location_y>547</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>5</mote_arg>
+    <plugin_config>
+      <interface>LEDs</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>350</width>
+    <z>6</z>
+    <height>125</height>
+    <location_x>1125</location_x>
+    <location_y>413</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>3</mote_arg>
+    <plugin_config>
+      <interface>LEDs</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>350</width>
+    <z>4</z>
+    <height>120</height>
+    <location_x>748</location_x>
+    <location_y>414</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>4</mote_arg>
+    <plugin_config>
+      <interface>LEDs</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>350</width>
+    <z>7</z>
+    <height>123</height>
+    <location_x>749</location_x>
+    <location_y>544</location_y>
+  </plugin>
+  <plugin>
+    org.contikios.cooja.plugins.MoteInterfaceViewer
+    <mote_arg>1</mote_arg>
+    <plugin_config>
+      <interface>Serial port</interface>
+      <scrollpos>0,0</scrollpos>
+    </plugin_config>
+    <width>361</width>
+    <z>1</z>
+    <height>214</height>
+    <location_x>15</location_x>
+    <location_y>531</location_y>
   </plugin>
 </simconf>
 

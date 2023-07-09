@@ -4,7 +4,7 @@
 /*---------------------------------------------------------------------------*/
 
 /* Minimize collision probability */
-// #define IEEE802154_CONF_PANID 0xF1F1
+#define IEEE802154_CONF_PANID 0xF1F1
 
 /* Enable TCP */
 #define UIP_CONF_TCP 1

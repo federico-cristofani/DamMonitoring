@@ -34,6 +34,9 @@
 #ifndef PROJECT_CONF_H_
 #define PROJECT_CONF_H_
 
+/* Minimize collision probability */
+#define IEEE802154_CONF_PANID 0xF1F1
+
 #ifndef WEBSERVER_CONF_CFS_CONNS
 #define WEBSERVER_CONF_CFS_CONNS 2
 #endif

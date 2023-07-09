@@ -29,13 +29,16 @@
 #define WATER_LEVEL_VAR                         5
 
 #ifdef FLOW_NAME
-    #if FLOW_NAME == ingate //Ingate-1
+    #if FLOW_NAME == inflow //Ingate-1
+        #define FLOW    0
         #define MAX_FLOW MAX_INFLOW
         #define INIT_GATE INIT_INGATE           
-    #elif FLOW_NAME == outgate-2 // Outgate-1
+    #elif FLOW_NAME == outflow-1 // Outgate-1
+        #define FLOW    1
         #define MAX_FLOW MAX_OUTFLOW_1
         #define INIT_GATE INIT_OUTGATE
-    #elif FLOW_NAME == outgate-1 // Outgate-1
+    #elif FLOW_NAME == outflow-2 // Outgate-2
+        #define FLOW    2
         #define MAX_FLOW MAX_OUTFLOW_2
         #define INIT_GATE INIT_OUTGATE
     #else
@@ -43,9 +46,10 @@
         #define INIT_GATE 0
     #endif
 #else
-    #define GATE(i)             ((i == 0) ? "inflow":((i == 1) ? "outflow-1":"outflow-2"))
     #define MAX_FLOW(i)         ((i == 0) ? MAX_INFLOW:((i == 1) ? MAX_OUTFLOW_1:MAX_OUTFLOW_2))
 #endif
+
+#define GATE(i)             ((i == 0) ? "inflow":((i == 1) ? "outflow-1":"outflow-2"))
 
 #define STR_(X) #X
 #define STR(X) STR_(X)

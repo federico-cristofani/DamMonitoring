@@ -190,8 +190,6 @@ PROCESS_THREAD(mqtt_client_process, ev, data){
     else if(ev == PROCESS_EVENT_TIMER && data == &led_timer){
       leds_off(LEDS_LED2);
     }
-
-   
   }
 
   PROCESS_END();

@@ -3,7 +3,7 @@ CONTIKI_PROJECT = gate-controller
 all: $(CONTIKI_PROJECT)
 
 CONTIKI ?= ../../../..
-PROJECT_DIR = ../..
+PROJECT_DIR ?= ../..
 
 cleanall: clean
 	@rm -f *.${TARGET}

@@ -22,6 +22,7 @@
 #ifdef BORDER_ROUTER_CONF_WEBSERVER
 #define UIP_CONF_TCP 1
 #endif
+
 #ifdef COAP_MAX_CHUNK_SIZE 
 #undef COAP_MAX_CHUNK_SIZE
 #endif

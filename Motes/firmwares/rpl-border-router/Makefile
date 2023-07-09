@@ -1,7 +1,7 @@
 CONTIKI_PROJECT = border-router
 all: $(CONTIKI_PROJECT)
 
-CONTIKI ?= ../../..
+CONTIKI ?= ../../../..
 PROJECT_DIR ?= ../..
 
 # Include RPL BR module

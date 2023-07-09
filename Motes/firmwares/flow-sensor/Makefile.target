@@ -1,2 +1,2 @@
-TARGET= nrf52840
+TARGET=nrf52840
 BOARD=dongle
