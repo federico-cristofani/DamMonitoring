@@ -9,13 +9,13 @@
 
     <appender name="STDOUT" class="ConsoleAppender">
         <encoder class="PatternLayoutEncoder">
-            <pattern>[%d{HH:mm:ss.SSS}][%-10thread][%-5level][%logger{50}] -%kvp- %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss}][%-5level][%logger{25}] -%kvp- %msg%n</pattern>
         </encoder>
     </appender>
 
     <appender name="FILE" class="RollingFileAppender">
         <encoder class="PatternLayoutEncoder">
-            <pattern>[%d{HH:mm:ss.SSS}][%-10thread][%-5level][%logger{50}] -%kvp- %msg%n</pattern>
+            <pattern>[%d{HH:mm:ss}][%-5level][%logger{25}] -%kvp- %msg%n</pattern>
         </encoder>
         <rollingPolicy class="SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>logs/collector-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
