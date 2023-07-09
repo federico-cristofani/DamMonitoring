@@ -21,7 +21,6 @@ import java.io.IOException;
 public final class CoapManager {
 
     private static final Logger logger = LoggerFactory.getLogger(CoapManager.class);
-    private static final String ALARM = "alarm";
     private static final ObjectMapper mapper = new ObjectMapper();
 
     private CoapManager(){ }
@@ -110,10 +109,10 @@ public final class CoapManager {
      * @return Boolean value indicating if the status of the alarm (true = on, false = off)
      * @throws CoapException In case of failure of the request
      */
-    public static Boolean getAlarmStatus() throws CoapException {
+    public static Boolean getAlarmStatus(String URI) throws CoapException {
         try {
             // Send GET request
-            CoapClient client = new CoapClient(URILookup(ALARM));
+            CoapClient client = new CoapClient(URI);
             CoapResponse response = client.get();
 
             // Check response code
@@ -132,7 +131,7 @@ public final class CoapManager {
             }
 
             return value;
-        } catch (ConnectorException | IOException | PersistenceException ex) {
+        } catch (ConnectorException | IOException ex) {
             throw new CoapException("Alarm: " + ex.getMessage());
         }
     }
@@ -143,7 +142,7 @@ public final class CoapManager {
      * @return Success message received from the server
      * @throws CoapException In case of failure of the request
      */
-    public static String setAlarmStatus(Boolean state) throws CoapException {
+    public static String setAlarmStatus(String name, Boolean state) throws CoapException {
         try {
 
             // Build request payload
@@ -153,7 +152,7 @@ public final class CoapManager {
                     .toString();
 
             // Send request
-            String message = coapPutRequest(ALARM, requestPayload);
+            String message = coapPutRequest(name, requestPayload);
 
             logger.info("Alarm {}", state);
 

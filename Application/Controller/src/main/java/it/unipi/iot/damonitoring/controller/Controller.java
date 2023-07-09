@@ -36,6 +36,9 @@ public class Controller {
 
 	private static void shutdown(){
 
+		// Stop registration server
+		RegistrationServer.getInstance().stop();
+
 		// Stop automatic control unit (if running mode is AUTO)
 		try {
 			ControlLogic.shutdown();

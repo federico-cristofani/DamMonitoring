@@ -24,4 +24,9 @@ public class RegistrationServer {
         server.start();
         logger.info("Registration server started");
     }
+
+    public void stop(){
+        server.stop();
+        logger.info("Registration server stopped");
+    }
 }

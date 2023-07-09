@@ -241,7 +241,7 @@ public final class ControlLogic {
         for(Resource alarm: DataManager.getInstance().alarmResources()){
             boolean currentStatus = DataManager.getInstance().getResourceValue(alarm.getName()) == 1;
             if(currentStatus != status){
-                CoapManager.setAlarmStatus(status);
+                CoapManager.setAlarmStatus(alarm.getName(), status);
                 DataManager.getInstance().setResourceValue(alarm.getName(), status ? 1:0);
             }
         }

@@ -1,6 +1,8 @@
 package it.unipi.iot.damonitoring.controller.user.commands;
 
+import it.unipi.iot.damonitoring.DataManager;
 import it.unipi.iot.damonitoring.controller.coap.CoapManager;
+import it.unipi.iot.damonitoring.entities.Resource;
 import picocli.CommandLine.*;
 
 @Command(
@@ -13,7 +15,12 @@ public class Alarm implements BaseCommand {
 
     @Override
     public Integer call() throws Exception {
-        System.out.println("Alarm: " + (CoapManager.getAlarmStatus() ? "On":"Off"));
+        for(Resource alarm: DataManager.getInstance().alarmResources()){
+            System.out.printf("* %s: %s%n",
+                    alarm.getName().toUpperCase(),
+                    CoapManager.getAlarmStatus(alarm.getUri()) ? "On": "Off");
+        }
+
         return 0;
     }
 }
