@@ -21,13 +21,6 @@
 #define PUB_PERIOD_S  5
 #define SUB_TOPIC     "simulation"
 #define PUB_TOPIC     "flow-rate"
-#define N_SENSOR    1
-
-#define FLOW_SENSORS OUTFLOW_1
-
-typedef enum {
-  FLOW_SENSORS
-} flow_sensor_t;
 
 /*---------------------------------------------------------------------------*/ 
 /*--------------------- INTERNAL FUNCTIONS AND VARIABLES --------------------*/
@@ -73,8 +66,8 @@ void simulate_read_flow(void* timer){
 };
 
 /* Read flow sensor */
-int read_flow_sensor(flow_sensor_t sensor){
-  return flow[sensor];/* Simulated value */
+int read_flow_sensor(){
+  return flow[FLOW];/* Simulated value */
 }
 
 
@@ -82,8 +75,8 @@ int read_flow_sensor(flow_sensor_t sensor){
 /*----------------------- MQTT CLIENT MESSAGE HANDLERS ----------------------*/
 /*---------------------------------------------------------------------------*/ 
 char* build_message(){
-  snprintf(record, APP_BUFFER_SIZE, "{\"bu\":\"m3/s\", \"e\": [{\"n\":\"%s\", \"v\":%de-%d}]}", 
-            STR(FLOW_NAME), read_flow_sensor(FLOW), SCALE_EXP);
+  snprintf(record, APP_BUFFER_SIZE, "{\"bn\":\"%s\",\"bu\":\"m3/s\", \"e\": [{\"n\":\"%s\", \"v\":%de-%d}]}", 
+            URN(), STR(FLOW_NAME), read_flow_sensor(), SCALE_EXP);
   return record;
 }
 

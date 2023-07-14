@@ -52,7 +52,7 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
   coap_set_status_code(response, CONTENT_2_05);
 
   // Set response for client
-  snprintf(response_buffer, BUFFER_LEN, "{\"n\":\"state\", \"vb\": %s}",  alarm.state ? "true":"false");
+  snprintf(response_buffer, BUFFER_LEN, "{\"n\":\"%sstate\", \"vb\": %s}",  URN(), alarm.state ? "true":"false");
   coap_set_header_content_format(response, APPLICATION_JSON);
   coap_set_payload(response, response_buffer, strlen(response_buffer));
 }

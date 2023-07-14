@@ -76,7 +76,7 @@ void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t 
   coap_set_status_code(response, CONTENT_2_05);
 
   // Set response for client
-  snprintf(response_buffer, BUFFER_LEN, "{\"n\":\"opening_level\", \"v\": %d, \"u\":\"percent\"}",  gates[res_index].opening_level);
+  snprintf(response_buffer, BUFFER_LEN, "{\"n\":\"%sopening_level\", \"v\": %d, \"u\":\"percent\"}", URN(), gates[res_index].opening_level);
   coap_set_header_content_format(response, APPLICATION_JSON);
   coap_set_payload(response, response_buffer, strlen(response_buffer));
 }

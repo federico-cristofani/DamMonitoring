@@ -82,8 +82,8 @@ int read_flow_sensor(flow_sensor_t sensor){
 /*----------------------- MQTT CLIENT MESSAGE HANDLERS ----------------------*/
 /*---------------------------------------------------------------------------*/ 
 char* build_message(){
-  snprintf(record, APP_BUFFER_SIZE, "{\"bu\":\"m3/s\", \"e\": [{\"n\":\"inflow\", \"v\":%de-%d},{\"n\":\"outflow-1\", \"v\":%de-%d},{\"n\":\"outflow-2\", \"v\":%de-%d}]}",
-    read_flow_sensor(INFLOW), SCALE_EXP, read_flow_sensor(OUTFLOW_1), SCALE_EXP, read_flow_sensor(OUTFLOW_2), SCALE_EXP);
+  snprintf(record, APP_BUFFER_SIZE, "{\"bn\":\"%s\",\"bu\":\"m3/s\", \"e\": [{\"n\":\"inflow\", \"v\":%de-%d},{\"n\":\"outflow-1\", \"v\":%de-%d},{\"n\":\"outflow-2\", \"v\":%de-%d}]}",
+    URN(), read_flow_sensor(INFLOW), SCALE_EXP, read_flow_sensor(OUTFLOW_1), SCALE_EXP, read_flow_sensor(OUTFLOW_2), SCALE_EXP);
   
   return record;
 }
