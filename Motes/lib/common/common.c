@@ -1,7 +1,24 @@
+#include "linkaddr.h"
 #include "common.h"
 #include "jsonparse.h"
 #include "string.h"
 #include "stdlib.h" /* atoi */
+#include "stdio.h" /* snprintf */
+
+#define URN_BUF_LEN  31
+extern linkaddr_t linkaddr_node_addr; 
+
+char urn_buf[URN_BUF_LEN];
+
+char* URN(){
+    snprintf(urn_buf, URN_BUF_LEN, "urn:dev:mac:%02x%02x%02x%02x%02x%02x%02x%02x/",
+         linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1], 
+         linkaddr_node_addr.u8[2], linkaddr_node_addr.u8[3], 
+         linkaddr_node_addr.u8[4], linkaddr_node_addr.u8[5], 
+         linkaddr_node_addr.u8[7],linkaddr_node_addr.u8[6]);
+  
+  return urn_buf;
+}
 
 int get_json_int_field(const char* json, char* const key, int* value){
   

@@ -6,6 +6,11 @@
 #define JSON_BUFFER     20 
 
 /**
+ * Returns URN buffer
+*/
+char* URN();
+
+/**
  * \brief       Extracts the value associated to the specified key from a JSON string
  * \param json  The string to parse as JSON
  * \param key   The name of JSON key 

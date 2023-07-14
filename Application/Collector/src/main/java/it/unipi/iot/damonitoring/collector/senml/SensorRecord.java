@@ -5,10 +5,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 public class SensorRecord {
+    @JsonProperty("bn")
+    private String baseName;
     @JsonProperty("bu")
     private String baseUnit;
     @JsonProperty("e")
     private List<Measurement> measurements;
+
+    public String getBaseName() {
+        return baseName;
+    }
+
+    public void setBaseName(String baseName) {
+        this.baseName = baseName;
+    }
 
     public String getBaseUnit() {
         return baseUnit;

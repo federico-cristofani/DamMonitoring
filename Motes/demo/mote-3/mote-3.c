@@ -82,7 +82,8 @@ int read_water_level(){
 /*----------------------- MQTT CLIENT MESSAGE HANDLERS ----------------------*/
 /*---------------------------------------------------------------------------*/ 
 char* build_message(){
-  snprintf(record, APP_BUFFER_SIZE, "{\"bu\": \"m\", \"e\":[{\"n\":\"water-level\", \"v\":%de-%d}]}", read_water_level(), SCALE_EXP);
+  snprintf(record, APP_BUFFER_SIZE, "{\"bn\":\"%s\",\"bu\": \"m\", \"e\":[{\"n\":\"water-level\", \"v\":%de-%d}]}", 
+      URN(), read_water_level(), SCALE_EXP);
   return record;
 }
 
