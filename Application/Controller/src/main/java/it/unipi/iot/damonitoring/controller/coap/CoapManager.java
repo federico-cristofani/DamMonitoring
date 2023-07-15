@@ -59,12 +59,13 @@ public final class CoapManager {
 
             // Parse response
             JsonNode node = mapper.readTree(response.getPayload());
-            String name = node.get("n").asText();
+            String[] nameSplit = node.get("n").asText().split("/");
+            String name = nameSplit[nameSplit.length - 1];
             String unit = node.get("u").asText();
             int value = node.get("v").asInt();
 
             // Check expected values
-            if(!name.equals("opening_level") && !unit.equals("percent")){
+            if(!name.equals("opening_level") || !unit.equals("percent")){
                 throw new CoapException("Bad record");
             }
 
@@ -122,7 +123,8 @@ public final class CoapManager {
 
             // Parse response
             JsonNode node = mapper.readTree(response.getPayload());
-            String name = node.get("n").asText();
+            String[] nameSplit = node.get("n").asText().split("/");
+            String name = nameSplit[nameSplit.length - 1];
             boolean value = node.get("vb").asBoolean();
 
             // Check expected values

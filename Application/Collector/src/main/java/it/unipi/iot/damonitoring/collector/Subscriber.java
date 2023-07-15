@@ -138,11 +138,12 @@ public class Subscriber implements MqttCallback {
                 logger.info("New measurement: {}", measurement);
 
                 // Retrieve data from record
+                String baseName = record.getBaseName();
                 String name = measurement.getName();
                 Float value = measurement.getValue();
 
                 // Discard messages arrived roughly at the same time
-                if(lastRecord.containsKey(name) && minNextTime.before(lastRecord.get(name))){
+                if(lastRecord.containsKey(baseName + name) && minNextTime.before(lastRecord.get(baseName + name))){
                     logger.warn("Measurement discarded (too fast): {}", measurement);
                     continue;
                 }
@@ -156,7 +157,7 @@ public class Subscriber implements MqttCallback {
                         }
                         // Store measurement
                         FlowRate flowRate = DataManager.getInstance().recordFlowRate(name, value);
-                        lastRecord.put(name, flowRate.getTimestamp());
+                        lastRecord.put(baseName + name, flowRate.getTimestamp());
 
                         //Simulation only
                         simulate(flowRate);

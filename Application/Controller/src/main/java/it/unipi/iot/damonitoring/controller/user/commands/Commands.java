@@ -31,7 +31,7 @@ public final class Commands {
 
     @Command(
             name = "Shutdown",
-            description = "Shutdown the server.",
+            description = "Shutdown the application.",
             mixinStandardHelpOptions = true,
             version = "Controller 1.0"
     )
